@@ -1,0 +1,10 @@
+from pyspark.sql import SparkSession
+
+# Create a SparkSession
+spark = SparkSession.builder.getOrCreate()
+
+# Read the CSV file into a DataFrame
+df = spark.read.csv("employees.csv", header=True, inferSchema=True)
+
+# Display the top 10 records from the DataFrame
+df.show(10)
